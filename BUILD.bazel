@@ -1,0 +1,19 @@
+load("@gazelle//:def.bzl", "gazelle")
+load("@rules_go//go:def.bzl", "go_binary", "go_library")
+
+# gazelle:prefix github.com/finn-ball/go-gazelle-grpcgcp
+gazelle(name = "gazelle")
+
+go_binary(
+    name = "main",
+    embed = [":go-gazelle-grpcgcp_lib"],
+    visibility = ["//visibility:public"],
+)
+
+go_library(
+    name = "go-gazelle-grpcgcp_lib",
+    srcs = ["main.go"],
+    importpath = "github.com/finn-ball/go-gazelle-grpcgcp",
+    visibility = ["//visibility:private"],
+    deps = ["@com_github_googlecloudplatform_grpc_gcp_go_grpcgcp//:grpcgcp"],
+)
