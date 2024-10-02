@@ -1,0 +1,13 @@
+diff --git a/grpcgcp/grpc_gcp/grpc_gcp.proto b/grpcgcp/grpc_gcp/grpc_gcp.proto
+index 47eb8b8..c1060e8 100644
+--- a/grpcgcp/grpc_gcp/grpc_gcp.proto
++++ b/grpcgcp/grpc_gcp/grpc_gcp.proto
+@@ -14,7 +14,7 @@
+ 
+ syntax = "proto3";
+ 
+-option go_package = "./grpc_gcp";
++option go_package = "github.com/GoogleCloudPlatform/grpc-gcp-go/grpcgcp/grpc_gcp";
+ 
+ package grpc.gcp;
+ 
