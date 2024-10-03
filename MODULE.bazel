@@ -9,11 +9,13 @@ go_sdk.download(version = "1.23.0")
 go_deps = use_extension("@gazelle//:extensions.bzl", "go_deps")
 go_deps.from_file(go_mod = "//:go.mod")
 
-go_deps.gazelle_override(
-    directives = [
-        "gazelle:resolve go github.com/GoogleCloudPlatform/grpc-gcp-go/grpcgcp/grpc_gcp @com_github_googlecloudplatform_grpc_gcp_go_grpcgcp//grpc_gcp",
+go_deps.archive_override(
+    urls = [
+        "https://github.com/fmeum/grpc-gcp-go/archive/6089706fb9928583ee9f91a69d2fb900edc0d6cb.zip",
     ],
+    strip_prefix = "grpc-gcp-go-6089706fb9928583ee9f91a69d2fb900edc0d6cb/grpcgcp",
     path = "github.com/GoogleCloudPlatform/grpc-gcp-go/grpcgcp",
+    sha256 = "ecd48a5073a85d4dfcb126c85b31c10b07d59a8a9d6c62061b4bf33ad30e2728",
 )
 
 use_repo(
